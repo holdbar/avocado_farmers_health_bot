@@ -71,7 +71,7 @@ def handle_symptoms(message):
     _, _, adult, gender, _ = get_user(message.from_user.id)
     answer = get_answer(message.text, adult, gender)
     bot.send_message(message.from_user.id, answer, parse_mode='Markdown')
-    if answer = "Не достаточно симптомов":
+    if answer == "Не достаточно симптомов":
         bot.register_next_step_handler(message, handle_symptoms)
 
 if __name__ == '__main__':
